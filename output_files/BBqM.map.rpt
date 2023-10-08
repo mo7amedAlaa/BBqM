@@ -1,0 +1,498 @@
+Analysis & Synthesis report for BBqM
+Wed Apr 20 14:57:58 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 13. Port Connectivity Checks: "rom:opj3"
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Apr 20 14:57:58 2022       ;
+; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                      ; BBqM                                        ;
+; Top-level Entity Name              ; BBqM                                        ;
+; Family                             ; MAX 10                                      ;
+; Total logic elements               ; 108                                         ;
+;     Total combinational functions  ; 107                                         ;
+;     Dedicated logic registers      ; 31                                          ;
+; Total registers                    ; 31                                          ;
+; Total pins                         ; 43                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C6GES   ;                    ;
+; Top-level entity name                                            ; BBqM               ; BBqM               ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; BBqM.v                           ; yes             ; User Verilog HDL File        ; C:/Users/omar mhmd/Desktop/BBqM/BBqM.v                                     ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/21.1/quartus/libraries/megafunctions/aglobal211.inc      ;         ;
+; db/lpm_divide_9kl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/omar mhmd/Desktop/BBqM/db/lpm_divide_9kl.tdf                      ;         ;
+; db/sign_div_unsign_8kh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/omar mhmd/Desktop/BBqM/db/sign_div_unsign_8kh.tdf                 ;         ;
+; db/alt_u_div_qee.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/omar mhmd/Desktop/BBqM/db/alt_u_div_qee.tdf                       ;         ;
+; db/add_sub_t3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/omar mhmd/Desktop/BBqM/db/add_sub_t3c.tdf                         ;         ;
+; db/add_sub_u3c.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/omar mhmd/Desktop/BBqM/db/add_sub_u3c.tdf                         ;         ;
+; db/lpm_divide_6sl.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/omar mhmd/Desktop/BBqM/db/lpm_divide_6sl.tdf                      ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 108         ;
+;                                             ;             ;
+; Total combinational functions               ; 107         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 23          ;
+;     -- 3 input functions                    ; 29          ;
+;     -- <=2 input functions                  ; 55          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 69          ;
+;     -- arithmetic mode                      ; 38          ;
+;                                             ;             ;
+; Total registers                             ; 31          ;
+;     -- Dedicated logic registers            ; 31          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 43          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 30          ;
+; Total fan-out                               ; 461         ;
+; Average fan-out                             ; 2.06        ;
++---------------------------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                      ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                   ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |BBqM                                  ; 107 (0)             ; 31 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 43   ; 0            ; 0          ; |BBqM                                                                                                 ; BBqM                ; work         ;
+;    |Clock_Divider:clk_divider|         ; 33 (33)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|Clock_Divider:clk_divider                                                                       ; Clock_Divider       ; work         ;
+;    |Flip_Flop:filp_flop|               ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|Flip_Flop:filp_flop                                                                             ; Flip_Flop           ; work         ;
+;    |bcd_counter:cnt|                   ; 4 (4)               ; 4 (4)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|bcd_counter:cnt                                                                                 ; bcd_counter         ; work         ;
+;    |decoder_7seg:seg1|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|decoder_7seg:seg1                                                                               ; decoder_7seg        ; work         ;
+;    |decoder_7seg:seg2|                 ; 3 (3)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|decoder_7seg:seg2                                                                               ; decoder_7seg        ; work         ;
+;    |lpm_divide:Div0|                   ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_6sl:auto_generated|  ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Div0|lpm_divide_6sl:auto_generated                                                   ; lpm_divide_6sl      ; work         ;
+;          |sign_div_unsign_8kh:divider| ; 17 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|    ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Div0|lpm_divide_6sl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |lpm_divide:Mod0|                   ; 20 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_9kl:auto_generated|  ; 20 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Mod0|lpm_divide_9kl:auto_generated                                                   ; lpm_divide_9kl      ; work         ;
+;          |sign_div_unsign_8kh:divider| ; 20 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider                       ; sign_div_unsign_8kh ; work         ;
+;             |alt_u_div_qee:divider|    ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|lpm_divide:Mod0|lpm_divide_9kl:auto_generated|sign_div_unsign_8kh:divider|alt_u_div_qee:divider ; alt_u_div_qee       ; work         ;
+;    |rom:opj3|                          ; 15 (15)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|rom:opj3                                                                                        ; rom                 ; work         ;
+;    |sevenSegments:seg|                 ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|sevenSegments:seg                                                                               ; sevenSegments       ; work         ;
+;    |t_count:opj1|                      ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |BBqM|t_count:opj1                                                                                    ; t_count             ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; rom:opj3|wtime[0]                                  ; rom:opj3|wtime[4]   ; yes                    ;
+; rom:opj3|wtime[1]                                  ; rom:opj3|wtime[4]   ; yes                    ;
+; rom:opj3|wtime[2]                                  ; rom:opj3|wtime[4]   ; yes                    ;
+; rom:opj3|wtime[3]                                  ; rom:opj3|wtime[4]   ; yes                    ;
+; rom:opj3|wtime[4]                                  ; rom:opj3|wtime[4]   ; yes                    ;
+; Number of user-specified and inferred latches = 5  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 31    ;
+; Number of registers using Synchronous Clear  ; 25    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BBqM|rom:opj3|wtime[4]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_9kl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6sl ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "rom:opj3"                                                                                                                                       ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; pcount ; Input ; Warning  ; Input port expression (3 bits) is smaller than the input port (4 bits) it drives.  Extra input bit(s) "pcount[3..3]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 43                          ;
+; cycloneiii_ff         ; 31                          ;
+;     CLR               ; 5                           ;
+;     CLR SCLR          ; 25                          ;
+;     plain             ; 1                           ;
+; cycloneiii_lcell_comb ; 119                         ;
+;     arith             ; 38                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 8                           ;
+;     normal            ; 81                          ;
+;         0 data inputs ; 5                           ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 20                          ;
+;         3 data inputs ; 21                          ;
+;         4 data inputs ; 23                          ;
+;                       ;                             ;
+; Max LUT depth         ; 6.70                        ;
+; Average LUT depth     ; 3.89                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Wed Apr 20 14:57:37 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BBqM -c BBqM
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 8 design units, including 8 entities, in source file bbqm.v
+    Info (12023): Found entity 1: BBqM File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 1
+    Info (12023): Found entity 2: bcd_counter File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 35
+    Info (12023): Found entity 3: sevenSegments File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 76
+    Info (12023): Found entity 4: Clock_Divider File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 97
+    Info (12023): Found entity 5: Flip_Flop File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 125
+    Info (12023): Found entity 6: rom File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 133
+    Info (12023): Found entity 7: t_count File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 180
+    Info (12023): Found entity 8: decoder_7seg File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 185
+Warning (10236): Verilog HDL Implicit Net warning at BBqM.v(21): created implicit net for "led" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 21
+Info (12127): Elaborating entity "BBqM" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at BBqM.v(13): truncated value with size 32 to match size of target (4) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 13
+Warning (10230): Verilog HDL assignment warning at BBqM.v(14): truncated value with size 32 to match size of target (4) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 14
+Warning (10034): Output port "sev2" at BBqM.v(4) has no driver File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+Warning (10034): Output port "sev3" at BBqM.v(4) has no driver File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+Info (12128): Elaborating entity "t_count" for hierarchy "t_count:opj1" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 17
+Info (12128): Elaborating entity "rom" for hierarchy "rom:opj3" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 18
+Warning (10270): Verilog HDL Case Statement warning at BBqM.v(141): incomplete case statement has no default case item File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 141
+Warning (10270): Verilog HDL Case Statement warning at BBqM.v(154): incomplete case statement has no default case item File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 154
+Warning (10270): Verilog HDL Case Statement warning at BBqM.v(167): incomplete case statement has no default case item File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 167
+Warning (10240): Verilog HDL Always Construct warning at BBqM.v(139): inferring latch(es) for variable "wtime", which holds its previous value in one or more paths through the always construct File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+Info (10041): Inferred latch for "wtime[0]" at BBqM.v(139) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+Info (10041): Inferred latch for "wtime[1]" at BBqM.v(139) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+Info (10041): Inferred latch for "wtime[2]" at BBqM.v(139) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+Info (10041): Inferred latch for "wtime[3]" at BBqM.v(139) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+Info (10041): Inferred latch for "wtime[4]" at BBqM.v(139) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+Info (12128): Elaborating entity "Clock_Divider" for hierarchy "Clock_Divider:clk_divider" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 19
+Warning (10230): Verilog HDL assignment warning at BBqM.v(113): truncated value with size 32 to match size of target (25) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 113
+Info (12128): Elaborating entity "Flip_Flop" for hierarchy "Flip_Flop:filp_flop" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 20
+Info (12128): Elaborating entity "bcd_counter" for hierarchy "bcd_counter:cnt" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 21
+Warning (10230): Verilog HDL assignment warning at BBqM.v(55): truncated value with size 32 to match size of target (3) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 55
+Warning (10230): Verilog HDL assignment warning at BBqM.v(63): truncated value with size 32 to match size of target (3) File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 63
+Info (12128): Elaborating entity "sevenSegments" for hierarchy "sevenSegments:seg" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 22
+Info (12128): Elaborating entity "decoder_7seg" for hierarchy "decoder_7seg:seg1" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 24
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 13
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 14
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 13
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 13
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_9kl.tdf
+    Info (12023): Found entity 1: lpm_divide_9kl File: C:/Users/omar mhmd/Desktop/BBqM/db/lpm_divide_9kl.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: C:/Users/omar mhmd/Desktop/BBqM/db/sign_div_unsign_8kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qee.tdf
+    Info (12023): Found entity 1: alt_u_div_qee File: C:/Users/omar mhmd/Desktop/BBqM/db/alt_u_div_qee.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_t3c.tdf
+    Info (12023): Found entity 1: add_sub_t3c File: C:/Users/omar mhmd/Desktop/BBqM/db/add_sub_t3c.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_u3c.tdf
+    Info (12023): Found entity 1: add_sub_u3c File: C:/Users/omar mhmd/Desktop/BBqM/db/add_sub_u3c.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 14
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 14
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6sl.tdf
+    Info (12023): Found entity 1: lpm_divide_6sl File: C:/Users/omar mhmd/Desktop/BBqM/db/lpm_divide_6sl.tdf Line: 25
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch rom:opj3|wtime[0] has unsafe behavior File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sw[2] File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 2
+Warning (13012): Latch rom:opj3|wtime[1] has unsafe behavior File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sw[2] File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 2
+Warning (13012): Latch rom:opj3|wtime[2] has unsafe behavior File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sw[2] File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 2
+Warning (13012): Latch rom:opj3|wtime[3] has unsafe behavior File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sw[2] File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 2
+Warning (13012): Latch rom:opj3|wtime[4] has unsafe behavior File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 139
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sw[2] File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 2
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sev2[0]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev2[1]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev2[2]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev2[3]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev2[4]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev2[5]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev2[6]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[0]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[1]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[2]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[3]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[4]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[5]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "sev3[6]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 4
+    Warning (13410): Pin "led2[5]" is stuck at GND File: C:/Users/omar mhmd/Desktop/BBqM/BBqM.v Line: 6
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/omar mhmd/Desktop/BBqM/output_files/BBqM.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 151 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 36 output pins
+    Info (21061): Implemented 108 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4752 megabytes
+    Info: Processing ended: Wed Apr 20 14:57:58 2022
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:34
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/omar mhmd/Desktop/BBqM/output_files/BBqM.map.smsg.
+
+

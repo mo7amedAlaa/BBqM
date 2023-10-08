@@ -1,0 +1,6 @@
+
+State Machine - |BBqM|COUNTER_FSM:cnt|State
+Name State.S0 State.S2 State.S1 
+State.S0 0 0 0 
+State.S1 1 0 1 
+State.S2 1 1 0 
